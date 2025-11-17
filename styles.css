@@ -1,0 +1,102 @@
+:root{
+  --accent: #e67e22;
+  --accent-dark: #cf6d17;
+  --bg: #fff;
+  --text: #222;
+  --muted: #666;
+  --card-bg: #fbfbfb;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+header{
+  text-align:center;
+  padding:28px 16px 6px;
+  border-bottom:1px solid #eee;
+}
+header h1{margin:0;font-size:1.6rem}
+header .lead{color:var(--muted);margin-top:6px;font-size:0.95rem}
+
+main{padding:20px;max-width:980px;margin:0 auto}
+
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:18px;
+}
+.controls label{font-size:0.9rem;color:var(--muted)}
+.controls select,
+.controls input{
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  min-width:200px;
+}
+.controls button{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:9px 14px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+}
+.controls button:hover{background:var(--accent-dark)}
+
+.toggle{display:flex;align-items:center;gap:8px;margin-left:auto;font-size:0.9rem;color:var(--muted)}
+.toggle input{transform:scale(1.0)}
+
+.clocks{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+
+.clock{
+  background:var(--card-bg);
+  border:1px solid #eee;
+  padding:14px;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.03);
+  position:relative;
+}
+.clock h3{margin:0;font-size:1rem}
+.clock .tz{font-size:0.85rem;color:var(--muted);margin-top:6px}
+.time{font-family: "SFMono-Regular", Menlo, Monaco, monospace; font-size:2rem;margin-top:10px}
+.date{font-size:0.85rem;color:var(--muted);margin-top:6px}
+
+.remove-btn{
+  position:absolute;
+  top:8px;
+  right:8px;
+  background:transparent;
+  border:none;
+  color:var(--muted);
+  cursor:pointer;
+  font-weight:700;
+  padding:6px;
+  border-radius:6px;
+}
+.remove-btn:hover{background:#fff;color:#000}
+
+.error{
+  color:#b00020;
+  font-size:0.9rem;
+  margin-top:8px;
+}
+
+/* mobile tweaks */
+@media (max-width:520px){
+  .controls select, .controls input{min-width:140px}
+  .time{font-size:1.6rem}
+}
